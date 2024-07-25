@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Word Words - Libreria Virtual</title>
+    <link rel="icon" href="{{ url_for('static', filename='img/buho.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Word Words - Librería Virtual</title>
 </head>
 <body> 
 
@@ -17,25 +18,30 @@
     </div>
 
     <div class="btn">
-        <input type="text" placeholder="Autor, titulo, genero...">
+        <input type="text" placeholder="Autor, título, género...">
         <button type="submit"><img src="img/lupa.png" alt="Buscar"></button>
     </div>
 
-<!-- Menu -->
-
+    <!-- Menu -->
     <nav>
         <ul class="menu">
-            <li><a href="#" class="menu_icon"><img src="img/menu.png"></a></li>
-            <li><a href="#" class="carrito_icon"><img src="img/carrito.png"></a></li>
-            <li><a href="#" class="cuenta_icon"><img src="img/cuenta.png"></a></li>
+            <li><a href="#" class="menu_icon"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" class="carrito_icon"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="#" class="cuenta_icon"><i class="fas fa-user"></i></a></li>
         </ul>
+
+        <div class="dropdown-content">
+            <a href="#">Ficción</a>
+            <a href="#">Terror</a>
+            <a href="#">Fantasia</a>
+            <a href="#">Novelas</a>
+        </div>
     </nav>
 </header>
 
 <h2 class="sub_titulo1">Top Ventas</h2>
 
-<!-- Carrusel Seccion -->
-
+<!-- Carrusel Sección -->
 <div class="carrusel_container">
     <button class="carrusel_btn prev">&#10094;</button>
     <div class="carrusel">
@@ -43,12 +49,14 @@
             <div class="carrusel_item">
                 <img src="img/libro1.jpeg">
                 <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">La Cancion De Aquiles</h3>
-                    <p class="libro_resumen"> Siendo aún niño, Patroclo comete un crimen y es exiliado a la isla de Ftía, donde se convierte en compañero de Aquiles.</p>
+                    <h3 class="libro_titulo">La Canción De Aquiles</h3>
+                    <p class="libro_resumen">Siendo aún niño, Patroclo comete un crimen y es exiliado a la isla de Ftía, donde se convierte en compañero de Aquiles.</p>
                     <div class="libro_puntuacion">⭐⭐⭐⭐⭐</div>
                     <div class="libro_precio">$7.990</div>
-                    <button class="btn_comprar">Comprar</button>
-                    <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    </div>
                 </div>
             </div>
             <div class="carrusel_item">
@@ -58,19 +66,23 @@
                     <p class="libro_resumen">Todos esperaban que Violet Sorrengail muriera durante su primer año en el Colegio de Guerra Basgiath. Pero la Trilla fue tan solo la primera de unas pruebas imposibles</p>
                     <div class="libro_puntuacion">⭐⭐⭐⭐⭐</div>
                     <div class="libro_precio">$5.990</div>
-                    <button class="btn_comprar">Comprar</button>
-                    <button class="btn_guardar"><img src="img/guardar_icon.png" ></button>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    </div>
                 </div>
             </div>
             <div class="carrusel_item">
-                <img src="img/libro3.webp" >
+                <img src="img/libro3.webp">
                 <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">El Principe Cruel</h3>
+                    <h3 class="libro_titulo">El Príncipe Cruel</h3>
                     <p class="libro_resumen">Jude un humano que vive en un mundo con hadas que desprecian a su especie. Especialmente el Príncipe Cardan, el hijo más joven y perverso del Alto Rey.</p>
                     <div class="libro_puntuacion">⭐⭐⭐⭐⭐</div>
                     <div class="libro_precio">$6.990</div>
-                    <button class="btn_comprar">Comprar</button>
-                    <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -84,15 +96,14 @@
     <span class="indicador"></span>
 </div>
 
-<!-- Header - publicidad -->
+<!-- Banner -->
+<div class="banner">
+    <img src="img/header1.png" alt="Banner">
+</div>
 
+<h2 class="sub_titulo">Destacados de Ciencia Ficción</h2>
 
-
-
-<h2 class="sub_titulo">Destacados de Ciencia Ficcion</h2>
-
-<!-- Sección Ciencia Ficcion -->
-
+<!-- Sección Ciencia Ficción -->
 <div class="destacados_container">
     <button class="destacados_btn prev">&#10094;</button>
     <div class="destacados">
@@ -104,8 +115,10 @@
                     <p class="libro_resumen">La piel de Juliette es mortal. La última vez que tocó a alguien, lo mató. Por eso lleva 264 días encerrada, sin tocar a nadie.</p>
                     <div class="libro_puntuacion">⭐⭐⭐⭐⭐</div>
                     <div class="libro_precio">$7.990</div>
-                    <button class="btn_comprar">Comprar</button>
-                    <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    </div>
                 </div>
             </div>
             <div class="destacados_item">
@@ -115,21 +128,26 @@
                     <p class="libro_resumen">Un ataque de pánico hará que Margot salga corriendo. Comenzará así un viaje en el que aprenderá la tarea de ser ella misma.</p>
                     <div class="libro_puntuacion">⭐⭐⭐⭐⭐</div>
                     <div class="libro_precio">$4.990</div>
-                    <button class="btn_comprar">Comprar</button>
-                    <button class="btn_guardar"><img src="img/guardar_icon.png" ></button>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    </div>
                 </div>
             </div>
             <div class="destacados_item">
-                <img src="img/libro8.png" >
+                <img src="img/libro8.png">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">La Hija De la Diosa De la Luna</h3>
                     <p class="libro_resumen">Este es el resumen del libro...</p>
                     <div class="libro_puntuacion">⭐⭐⭐⭐⭐</div>
                     <div class="libro_precio">$6.990</div>
-                    <button class="btn_comprar">Comprar</button>
-                    <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    </div>
                 </div>
             </div>
+
             <div class="destacados_item">
                 <img src="img/libro7.png">
                 <div class="destacados_detalles">
@@ -137,16 +155,32 @@
                     <p class="libro_resumen">Charlie Reade, un joven de 17 años que hereda las llaves de un reino oculto de otro mundo y se enfrenta batallas entre el bien y el mal</p>
                     <div class="libro_puntuacion">⭐⭐⭐⭐⭐</div>
                     <div class="libro_precio">$5.990</div>
-                    <button class="btn_comprar">Comprar</button>
-                    <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    </div>
                 </div>
             </div>
+
+            <div class="destacados_item">
+                <img src="img/libro7.png">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">Cuento De Hadas</h3>
+                    <p class="libro_resumen">Charlie Reade, un joven de 17 años que hereda las llaves de un reino oculto de otro mundo y se enfrenta batallas entre el bien y el mal</p>
+                    <div class="libro_puntuacion">⭐⭐⭐⭐⭐</div>
+                    <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="img/guardar_icon.png"></button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <button class="destacados_btn next">&#10095;</button>
 </div>
 
-
-<script src="script.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

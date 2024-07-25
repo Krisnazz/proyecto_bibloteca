@@ -77,18 +77,20 @@ nav .menu {
 }
 
 nav .menu li {
-    padding: 0 20px 0 45px;
+    padding: 0 25px;
 }
 
-.menu_icon img, .carrito_icon img, .cuenta_icon img {
-    width: 50px;
-    height: 55px;
-    transition: filter 0.3s ease;
-    cursor: pointer;
+/* Iconos del menú */
+
+.menu_icon i, .carrito_icon i, .cuenta_icon i {
+    font-size: 35px; 
+    color: #5e6c48; 
+    transition: color 0.3s ease;
+    padding: 4px 10px 0 ;
 }
 
-.menu_icon img:hover, .carrito_icon img:hover, .cuenta_icon img:hover {
-    filter: brightness(70%);
+.menu_icon i:hover, .carrito_icon i:hover, .cuenta_icon i:hover {
+    color: #7a8b60; 
 }
 
 /* Top ventas */
@@ -106,7 +108,7 @@ nav .menu li {
 
 .carrusel_container {
     position: relative;
-    max-width: 1220px;
+    max-width: 1260px;
     margin: 20px auto;
     overflow: hidden;
     background-color: #2C4847;
@@ -141,40 +143,49 @@ nav .menu li {
 }
 
 .carrusel_detalles {
-    margin-left: 25px;
+    margin-left: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    max-width: 2000px;
+}
+
+.carrusel_item, .destacados_item{
+    padding: 10px;
 }
 
 /* Libros */
 
-
 .libro_titulo {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     margin-bottom: 5px;
 }
 
 .libro_resumen {
-    font-size: 13px;
+    font-size: 12px;
     margin-bottom: 10px;
 }
 
 .libro_puntuacion {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 5px;
 }
 
 .libro_precio {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 /* Botones */
 
+.botones_libro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
 .btn_comprar {
     background-color: #799277;
@@ -217,7 +228,7 @@ nav .menu li {
     color: #F1EFD1;
     background-color: #2C4847;
     border: none;
-    padding: 20px;
+    padding: 11px;
     cursor: pointer;
     z-index: 1;
 }
@@ -247,6 +258,25 @@ nav .menu li {
 
 .indicador.active {
     background-color: #799277;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+
+}
+
+.banner img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #e4e9e4ab;
+    box-shadow: 0 3px 6px #bfc2bf9d;
+    margin-top: 80px;
 }
 
 /* Destacados */
@@ -337,7 +367,7 @@ nav .menu li {
 }
 
 .destacados_btn.prev {
-    left: 10px;
+    left: 0px;
 }
 
 .destacados_btn.next {
@@ -346,4 +376,32 @@ nav .menu li {
 
 .btn_comprar:hover {
     filter: brightness(70%);
+}
+
+/* menú desplegable */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 60px; 
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
 }
