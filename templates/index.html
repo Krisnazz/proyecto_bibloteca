@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='img/buho.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>Word Words - Librería Virtual</title>
+</head>
+<body> 
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="{{ url_for('static', filename='img/WorldWords.png') }}" width="65%">
+        </a>
+    </div>
+
+    <div class="btn">
+        <input type="text" placeholder="Autor, título, género...">
+        <button type="submit"><img src="{{ url_for('static', filename='img/lupa.png') }}" alt="Buscar"></button>
+    </div>
+
+<!-- Menu -->
+
+    <nav>
+        <ul class="menu">
+            <li><a href="#" class="menu_icon"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" class="carrito_icon"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="#" class="cuenta_icon"><i class="fas fa-user"></i></a></li>
+        </ul>
+
+        <div class="dropdown-content">
+            <a href="#">Ficción</a>
+            <a href="#">Terror</a>
+            <a href="#">Fantasia</a>
+            <a href="#">Novelas</a>
+        </div>
+    </nav>
+</header>
+
+<h2 class="sub_titulo1">Top Ventas</h2>
+
+<!-- Carrusel Sección -->
+
+<div class="carrusel_container">
+    <button class="carrusel_btn prev">&#10094;</button>
+    <div class="carrusel">
+        <div class="carrusel_items">
+
+<!-- Primer Slide -->
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">La Canción De Aquiles</h3>
+                    <img src="{{ url_for('static', filename='img/libro1.jpeg') }}">
+                    <div class="libro_puntuacion">                         
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$7.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">Alas De Hierro (2)</h3>
+                    <img src="{{ url_for('static', filename='img/libro2.webp') }}">
+                    <div class="libro_puntuacion">                        
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">El Príncipe Cruel</h3>
+                    <img src="{{ url_for('static', filename='img/libro3.webp') }}">
+                    <div class="libro_puntuacion">                        
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$6.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">Indigno De Ser Humano</h3>
+                    <img src="{{ url_for('static', filename='img/libro9.jpeg') }}">
+                    <div class="libro_puntuacion">    
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carrusel_items">
+
+<!-- Segundo Slide -->
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">Destroza Me</h3>
+                    <img src="{{ url_for('static', filename='img/libro4.jpeg') }}">
+                    <div class="libro_puntuacion">                         
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$7.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">Un Cuento Perfecto</h3>
+                    <img src="{{ url_for('static', filename='img/libro5.jpeg') }}">
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$4.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">La Hija De la Diosa De la Luna</h3>
+                    <img src="{{ url_for('static', filename='img/libro8.png') }}">
+                    <div class="libro_puntuacion">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">Tan Poca Vida</h3>
+                    <img src="{{ url_for('static', filename='img/libro10.webp') }}">
+                    <div class="libro_puntuacion">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <button class="carrusel_btn next">&#10095;</button>
+</div>
+
+<div class="indicadores">
+    <span class="indicador" data-slide="1"></span>
+    <span class="indicador" data-slide="2"></span>
+</div>
+
+<!-- Banner -->
+
+<div class="banner">
+    <img src="{{ url_for('static', filename='img/header1.png') }}" alt="Banner">
+</div>
+
+<h2 class="sub_titulo1">Destacados de Ciencia Ficción</h2>
+
+<!-- Destacados de Ciencia Ficción Sección -->
+
+<div class="destacados_container">
+    <button class="destacados_btn prev">&#10094;</button>
+    <div class="destacados">
+        <div class="destacados_items">
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro4.jpeg') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">Destroza Me</h3>
+                    <p class="libro_resumen">La piel de Juliette es mortal. La última vez que tocó a alguien, lo mató. Por eso lleva 264 días encerrada, sin tocar a nadie.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>
+                    <div class="libro_precio">$7.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro5.jpeg') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">Un Cuento Perfecto</h3>
+                    <p class="libro_resumen">Un ataque de pánico hará que Margot salga corriendo. Comenzará así un viaje en el que aprenderá la tarea de ser ella misma.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>                    <div class="libro_precio">$4.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro8.png') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">La Hija De la Diosa De la Luna</h3>
+                    <p class="libro_resumen">es una apasionante aventura inspirada en la leyenda de Chang'e que explora hasta dónde puede llegar una mujer en aras de la familia, la lealtad y el amor.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>                    <div class="libro_precio">$6.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro7.png') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">Cuento De Hadas</h3>
+                    <p class="libro_resumen">Charlie Reade, un joven de 17 años que hereda las llaves de un reino oculto de otro mundo y se enfrenta batallas entre el bien y el mal</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>                    <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro7.png') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">Cuento De Hadas</h3>
+                    <p class="libro_resumen">Charlie Reade, un joven de 17 años que hereda las llaves de un reino oculto de otro mundo y se enfrenta batallas entre el bien y el mal</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>                    <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro11.jpg') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">De Sangres y Cenizas</h3>
+                    <p class="libro_resumen"> La historia sigue a Poppy, una joven que ha sido elegida para ser la Doncella, una figura sagrada que debe sacrificarse para mantener a salvo a su reino.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>                    
+                        <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro12.jpeg') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">Damián</h3>
+                    <p class="libro_resumen">Un día,Damián desaparece y su vida sigue un curso corriente, pero meses después vuelve, y con él regresa la peligrosa curiosidad que Padme tanto intentó reprimir.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>                   
+                        <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <button class="destacados_btn next">&#10095;</button>
+</div>
+
+</body>
+</html>   

@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Carrusel Principal
+
+// Carrusel Principal
     const carrusel = document.querySelector(".carrusel");
     const carruselItems = document.querySelectorAll(".carrusel_item");
     const prevBtnCarrusel = document.querySelector(".carrusel_btn.prev");
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentIndexCarrusel = 0;
 
     function updateCarrusel() {
-        carrusel.style.transform = `translateX(-${currentIndexCarrusel * 100}%)`;
+        carrusel.style.transform = `translateX(-${currentIndexCarrusel * 50}%)`;
         indicadores.forEach((indicador, index) => {
             indicador.classList.toggle('active', index === currentIndexCarrusel);
         });
@@ -36,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(showNextItemCarrusel, 8000); 
 
-    // Destacados
+// Destacados
+
     const destacadosCarrusel = document.querySelector(".destacados");
     const destacadosItems = document.querySelectorAll(".destacados_item");
     const prevBtnDestacados = document.querySelector(".destacados_btn.prev");
@@ -59,4 +61,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     nextBtnDestacados.addEventListener("click", showNextItemDestacados);
     prevBtnDestacados.addEventListener("click", showPrevItemDestacados);
+
+// Menú desplegable
+
+    const menuBtn = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+
+    menuBtn.addEventListener("click", function() {
+        const isMenuVisible = menu.style.display === "block";
+        menu.style.display = isMenuVisible ? "none" : "block";
+    });
 });
