@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #dcdddc;
+    background-color: #f4f4f4;
 }
 
 /* Header */
@@ -54,8 +54,8 @@ header {
     border: none;
     padding: 3.5px 5px;
     position: absolute;
-    top: calc(29% - 10px);
-    left: calc(65% + 75px);
+    top: calc(29% - 11px);
+    left: calc(65% + 79px);
 }
 
 .btn button img {
@@ -269,7 +269,7 @@ nav .menu li {
 }
 
 .indicador.active {
-    background-color: #799277; /* Color activo para el indicador actual */
+    background-color: #799277; 
 }
 
 
@@ -293,7 +293,7 @@ nav .menu li {
     margin-top: 80px;
 }
 
-/* Destacados */
+/* Destacados Ciencia ficcion*/
 
 .sub_titulo {
     text-align: left;
@@ -303,6 +303,7 @@ nav .menu li {
     color: #799277;
     display: block;
 }
+
 
 /* destacados Container*/
 
@@ -390,31 +391,5 @@ nav .menu li {
 
 .btn_comprar:hover {
     filter: brightness(70%);
-}
-
-/* menú desplegable */
-
-.dropdown-content {
-    display: none; 
-    position: absolute;
-    top: 60px; 
-    left: 0;
-    background-color: #2C4847; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1000;
-}
-
-.dropdown-content a {
-    color: #F1EFD1; 
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-bottom: 1px solid #5e6c48;
-}
-
-.dropdown-content a:hover {
-    background-color: #3a5f5e;
 }
 

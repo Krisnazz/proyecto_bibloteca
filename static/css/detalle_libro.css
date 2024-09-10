@@ -1,0 +1,352 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+/* Header */
+
+.logo {
+    padding: 10px 30px;
+}
+
+header {
+    background-color: #2C4847;
+    padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+/*  Barra de busqueda */
+
+.btn {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn input[type="text"] {
+    width: 75%;
+    padding: 10px 20px;
+    font-size: 17px;
+    border: 1px solid white;
+    border-radius: 45px;
+    outline: none;
+    box-sizing: border-box;
+    margin-left: -10%;
+}
+
+.btn input[type="text"]::placeholder {
+    color: #adafad;
+    position: relative;
+}
+
+.btn button {
+    background-color: #869B67;
+    border-radius: 50%;
+    border: none;
+    padding: 3.5px 5px;
+    position: absolute;
+    top: calc(29% - 11px);
+    left: calc(65% + 79px);
+}
+
+.btn button img {
+    width: 29px;
+    height: 29px;
+    transition: filter 0.3s ease;
+}
+
+.btn button img:hover {
+    filter: brightness(70%);
+}
+
+/* Menu */
+
+nav .menu {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .menu li {
+    padding: 0 25px;
+}
+
+/* Iconos del menú */
+
+.menu_icon i, .carrito_icon i, .cuenta_icon i {
+    font-size: 35px; 
+    color: #5e6c48; 
+    transition: color 0.3s ease;
+    padding: 4px 10px 0 ;
+}
+
+.menu_icon i:hover, .carrito_icon i:hover, .cuenta_icon i:hover {
+    color: #7a8b60; 
+}
+
+/* Detalle Libros  */
+
+.detalle_libro {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 20px;
+    padding: 10px; 
+}
+
+.detalle_imagen_puntuacion {
+    flex: 1;
+    text-align: center;
+    margin-right: 20px; 
+}
+
+#detalle_imagen {
+    width: 220px; 
+    height: auto;
+    margin-bottom: 10px; 
+    border-radius: 11px;
+    margin-left: auto; 
+    margin-top: 40px;
+}
+
+.libro_puntuacion {
+    font-size: 18px;
+    margin-bottom: 10px; 
+    color: gold;
+}
+
+.libro_puntuacion i:hover {
+    color: darkgoldenrod;
+}
+
+.detalle_info {
+    flex: 2; 
+    padding-left: 20px; 
+    color: #2C4847;
+    border-left: 1px solid #799277; 
+    margin-top: 40px;
+}
+
+#detalle_titulo {
+    text-align: center; 
+    font-weight: 700;
+    font-size: 35px;
+    margin: 10px auto; 
+    color: #2C4847; 
+    padding: auto auto ;
+}
+
+#detalle_resumen {
+    font-size: 14px; 
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #2C4847;
+    font-weight: 400;
+}
+
+#detalle_precio {
+    font-size: 20px; 
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #2C4847;
+}
+
+.botones_libro {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 10px; 
+}
+
+.btn_comprar {
+    background-color: #799277;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #F1EFD1;
+    transition: filter 0.3s ease;
+}
+
+.btn_comprar:hover {
+    filter: brightness(70%);
+}
+
+/* Botón de guardar */
+
+.btn_guardar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btn_guardar img {
+    width: 24px; 
+    height: 24px;
+    transition: filter 0.3s ease;
+}
+
+.btn_guardar img:hover {
+    filter: brightness(70%);
+}
+
+/* También Te Puede Interesar */
+
+.sub_titulo1 {
+    text-align: left; 
+    font-weight: 900;
+    font-size: 35px;
+    margin: 35px 50px;
+    color: #799277;
+    display: block;
+    margin-top: 80px;
+}
+
+/* Carrusel */
+
+.carrusel_container {
+    position: relative;
+    max-width: 1260px;
+    margin: 20px auto ;
+    overflow: hidden;
+    background-color: #2C4847;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px #233b3b;
+    padding: 20px;
+    color: #F1EFD1;
+}
+
+.carrusel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel_items {
+    width: 100%;
+    display: flex;
+    padding: 15px;
+}
+
+.carrusel_item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.carrusel_item img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carrusel_detalles {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    max-width: 2000px;
+}
+
+.carrusel_item, .destacados_item {
+    padding: 10px;
+}
+
+/* Libros */
+
+.libro_titulo {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.libro_puntuacion {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: gold;
+}
+
+.libro_puntuacion i:hover {
+    color: darkgoldenrod;
+}
+
+.libro_precio {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.botones_libro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn_comprar {
+    background-color: #799277;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #F1EFD1;
+    transition: filter 0.3s ease;
+}
+
+.btn_comprar:hover {
+    filter: brightness(70%);
+}
+
+.btn_guardar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+}
+
+.btn_guardar img {
+    width: 20px;
+    height: 30px;
+    transition: filter 0.3s ease;
+}
+
+.btn_guardar img:hover {
+    filter: brightness(70%);
+}
+
+/* Carrusel botones - indicadores */
+
+.carrusel_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #F1EFD1;
+    background-color: #2C4847;
+    border: none;
+    padding: 11px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carrusel_btn.prev {
+    left: 0;
+}
+
+.carrusel_btn.next {
+    right: 0;
+}

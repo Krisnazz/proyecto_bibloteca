@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ url_for('static', filename='img/buho.png') }}" type="image/png">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-    <title>Word Words - Librería Virtual</title>
+    <title>Word Words</title>
 </head>
-<body> 
+<body>
 
-<header>
-    <div class="logo">
-        <a href="index.html">
-            <img src="{{ url_for('static', filename='img/WorldWords.png') }}" width="65%">
-        </a>
-    </div>
+<!-- Header -->
+
+    <header>
+        <div class="logo">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='img/WorldWords.png') }}" width="65%" alt="World Words">
+            </a>
+        </div>
 
     <div class="btn">
         <input type="text" placeholder="Autor, título, género...">
@@ -26,32 +27,22 @@
 
 <!-- Menu -->
 
-    <nav>
-        <ul class="menu">
-            <li><a href="#" class="menu_icon"><i class="fas fa-bars"></i></a></li>
-            <li><a href="#" class="carrito_icon"><i class="fas fa-shopping-cart"></i></a></li>
-            <li><a href="#" class="cuenta_icon"><i class="fas fa-user"></i></a></li>
-        </ul>
-
-        <div class="dropdown-content">
-            <a href="#">Ficción</a>
-            <a href="#">Terror</a>
-            <a href="#">Fantasia</a>
-            <a href="#">Novelas</a>
-        </div>
-    </nav>
-</header>
+        <nav>
+            <ul class="menu">
+                <li class="menu_icon"><i class="fas fa-bars" id="menu-btn"></i></li>
+                <li class="carrito_icon"><i class="fas fa-shopping-cart"></i></li>
+                <li class="cuenta_icon"><i class="fas fa-user"></i></li>
+            </ul>
+        </nav>
+    </header>
 
 <h2 class="sub_titulo1">Top Ventas</h2>
 
-<!-- Carrusel Sección -->
+<!-- Carrusel Principal -->
 
-<div class="carrusel_container">
-    <button class="carrusel_btn prev">&#10094;</button>
-    <div class="carrusel">
-        <div class="carrusel_items">
-
-<!-- Primer Slide -->
+    <div class="carrusel_container">
+        <div class="carrusel">
+            <div class="carrusel_items">
 
             <div class="carrusel_item">
                 <div class="carrusel_detalles">
@@ -129,9 +120,9 @@
                 </div>
             </div>
         </div>
-        <div class="carrusel_items">
 
-<!-- Segundo Slide -->
+            <div class="carrusel_items">
+
 
             <div class="carrusel_item">
                 <div class="carrusel_detalles">
@@ -182,7 +173,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <div class="libro_precio">$5.990</div>
+                    <div class="libro_precio">$6.990</div>
                     <div class="botones_libro">
                         <button class="btn_comprar">Comprar</button>
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
@@ -208,31 +199,91 @@
                     </div>
                 </div>
             </div>
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">Al Final Mueren Los Dos </h3>
+                    <img src="{{ url_for('static', filename='img/libro13.webp') }}">
+                    <div class="libro_puntuacion">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">Los 7 Maridos De Evelyn Hugo </h3>
+                    <img src="{{ url_for('static', filename='img/libro14.webp') }}">
+                    <div class="libro_puntuacion">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$6.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carrusel_item">
+                <div class="carrusel_detalles">
+                    <h3 class="libro_titulo">La Bibloteca De La Media Noche </h3>
+                    <img src="{{ url_for('static', filename='img/libro15.webp') }}">
+                    <div class="libro_puntuacion">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$6.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            </div>
         </div>
 
+<!-- Indicadores - Flechas -->
+
+        <button class="carrusel_btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="carrusel_btn next"><i class="fas fa-chevron-right"></i></button>
+        <div class="indicadores">
+            <div class="indicador"></div>
+            <div class="indicador"></div>
+        </div>
     </div>
-    <button class="carrusel_btn next">&#10095;</button>
-</div>
 
-<div class="indicadores">
-    <span class="indicador" data-slide="1"></span>
-    <span class="indicador" data-slide="2"></span>
-</div>
+    <!-- Banner -->
+    <div class="banner">
+        <img src="{{ url_for('static', filename='img/header1.png') }}" alt="Banner">
+    </div>
 
-<!-- Banner -->
+<!-- Destacados de Ciencia Ficción -->
 
-<div class="banner">
-    <img src="{{ url_for('static', filename='img/header1.png') }}" alt="Banner">
-</div>
+    <div class="sub_titulo">Destacados de Ciencia Ficción</div>
+    <div class="destacados_container">
+        <div class="destacados">
+            <div class="destacados_items">
 
-<h2 class="sub_titulo1">Destacados de Ciencia Ficción</h2>
-
-<!-- Destacados de Ciencia Ficción Sección -->
-
-<div class="destacados_container">
-    <button class="destacados_btn prev">&#10094;</button>
-    <div class="destacados">
-        <div class="destacados_items">
             <div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro4.jpeg') }}">
                 <div class="destacados_detalles">
@@ -252,6 +303,7 @@
                 </div>
             </div>
 
+
             <div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro5.jpeg') }}">
                 <div class="destacados_detalles">
@@ -262,7 +314,8 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i></div>                    <div class="libro_precio">$4.990</div>
+                        <i class="fas fa-star"></i></div>                    
+                        <div class="libro_precio">$4.990</div>
                     <div class="botones_libro">
                         <button class="btn_comprar">Comprar</button>
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
@@ -280,13 +333,15 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i></div>                    <div class="libro_precio">$6.990</div>
+                        <i class="fas fa-star"></i></div>                    
+                        <div class="libro_precio">$6.990</div>
                     <div class="botones_libro">
                         <button class="btn_comprar">Comprar</button>
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
             </div>
+
 
             <div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro7.png') }}">
@@ -298,25 +353,8 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i></div>                    <div class="libro_precio">$5.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="destacados_item">
-                <img src="{{ url_for('static', filename='img/libro7.png') }}">
-                <div class="destacados_detalles">
-                    <h3 class="libro_titulo">Cuento De Hadas</h3>
-                    <p class="libro_resumen">Charlie Reade, un joven de 17 años que hereda las llaves de un reino oculto de otro mundo y se enfrenta batallas entre el bien y el mal</p>
-                    <div class="libro_puntuacion"> 
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i></div>                    <div class="libro_precio">$5.990</div>
+                        <i class="fas fa-star"></i></div>                    
+                        <div class="libro_precio">$5.990</div>
                     <div class="botones_libro">
                         <button class="btn_comprar">Comprar</button>
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
@@ -335,7 +373,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i></div>                    
-                        <div class="libro_precio">$5.990</div>
+                        <div class="libro_precio">$6.990</div>
                     <div class="botones_libro">
                         <button class="btn_comprar">Comprar</button>
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
@@ -355,6 +393,26 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i></div>                   
+                        <div class="libro_precio">$7.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro13.webp') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">Al Final Mueren Los Dos</h3>
+                    <p class="libro_resumen">La historia agridulce de Mateo Torres y Rufus Emeterio, ambos desconocidos, pero terminan siendo amantes en un presente alternativo donde es posible predecir la muerte en un plazo de 24 horas</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>                    
                         <div class="libro_precio">$5.990</div>
                     <div class="botones_libro">
                         <button class="btn_comprar">Comprar</button>
@@ -363,10 +421,52 @@
                 </div>
             </div>
 
-        </div>
-    </div>
-    <button class="destacados_btn next">&#10095;</button>
-</div>
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro14.webp') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">Los Siete Maridos De Evelyn Hugo</h3>
+                    <p class="libro_resumen">Evelyn Hugo, el icono de Hollywood que se ha recluido a su edad madura, por fin decide contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige a Monique Grant, nadie se sorprende más que la propia Monique.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>                    
+                        <div class="libro_precio">$4.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
 
+
+            <div class="destacados_item">
+                <img src="{{ url_for('static', filename='img/libro15.webp') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">La Bibloteca De La Media Noche</h3>
+                    <p class="libro_resumen">Cuando la protagonista Nora Seed intenta suicidarse, abre los ojos en una biblioteca llena de libros que contienen diferentes versiones de la historia de su vida.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i></div>                   
+                        <div class="libro_precio">$5.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+        </div>
+        <button class="destacados_btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="destacados_btn next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
-</html>   
+</html>

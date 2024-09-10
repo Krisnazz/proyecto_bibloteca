@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 // Carrusel Principal
+
     const carrusel = document.querySelector(".carrusel");
     const carruselItems = document.querySelectorAll(".carrusel_item");
     const prevBtnCarrusel = document.querySelector(".carrusel_btn.prev");
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    setInterval(showNextItemCarrusel, 8000); 
+    setInterval(showNextItemCarrusel, 9000); 
 
 // Destacados
 
@@ -62,13 +63,24 @@ document.addEventListener("DOMContentLoaded", function() {
     nextBtnDestacados.addEventListener("click", showNextItemDestacados);
     prevBtnDestacados.addEventListener("click", showPrevItemDestacados);
 
-// Menú desplegable
+// Manejo de clic en los libros
 
-    const menuBtn = document.getElementById("menu-btn");
-    const menu = document.getElementById("menu");
-
-    menuBtn.addEventListener("click", function() {
-        const isMenuVisible = menu.style.display === "block";
-        menu.style.display = isMenuVisible ? "none" : "block";
+    document.querySelectorAll(".carrusel_item").forEach(item => {
+        item.addEventListener("click", function() {
+            const titulo = this.querySelector(".libro_titulo").textContent;
+            const resumen = this.querySelector(".libro_resumen") ? this.querySelector(".libro_resumen").textContent : '';
+            const puntuacion = this.querySelector(".libro_puntuacion").innerHTML;
+            const precio = this.querySelector(".libro_precio").textContent;
+            const imagenSrc = this.querySelector("img").src;
+    
+            localStorage.setItem("detalle_libro", JSON.stringify({
+                titulo,
+                resumen,
+                puntuacion,
+                precio,
+                imagenSrc
+            }));
+            window.location.href = "detalle_libro.html";
+        });
     });
 });
