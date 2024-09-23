@@ -38,6 +38,7 @@
 <!-- Seccion Detalles -->
 
 <body>
+
     <div class="detalle_libro">
         <div class="detalle_imagen_puntuacion">
             <img id="detalle_imagen" src="{{ libro.img_url }}" alt="{{ libro.titulo }}">
@@ -69,87 +70,93 @@
     <div class="carrusel">
         <div class="carrusel_items">
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Destroza me</h3>
-                    <img src="{{ url_for('static', filename='img/libro4.jpeg') }}">
-                    <div class="libro_puntuacion">                         
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$7.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=5) }}">Destroza Me</a> 
+        </h3>
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Un Cuento Perfecto</h3>
-                    <img src="{{ url_for('static', filename='img/libro5.jpeg') }}">
-                    <div class="libro_puntuacion">                        
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$4.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
+        <a href="{{ url_for('detalle_libro', id=5) }}"> 
+            <img src="{{ url_for('static', filename='img/libro4.jpeg') }}" alt="Destroza Me">
+        </a>
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">La Hija De la Diosa De la Luna</h3>
-                    <img src="{{ url_for('static', filename='img/libro8.png') }}">
-                    <div class="libro_puntuacion">                        
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$6.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Indigno De Ser Humano</h3>
-                    <img src="{{ url_for('static', filename='img/libro9.jpeg') }}">
-                    <div class="libro_puntuacion">    
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$5.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
+        <div class="libro_puntuacion">                         
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
         </div>
 
+        <div class="libro_precio">$7.990</div>
+    </div>
+</div>
 
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=6) }}">Un Cuento Perfecto</a> 
+        </h3>
 
+        <a href="{{ url_for('detalle_libro', id=6) }}"> 
+            <img src="{{ url_for('static', filename='img/libro5.jpeg') }}" alt="Un Cuento Perfecto">
+        </a>
 
+        <div class="libro_puntuacion"> 
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
 
+        <div class="libro_precio">$4.990</div>
+    </div>
+</div>
+
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=7) }}">La Hija De La Diosa De La Luna</a> 
+        </h3>
+
+        <a href="{{ url_for('detalle_libro', id=7) }}"> 
+            <img src="{{ url_for('static', filename='img/libro8.png') }}" alt="La Hija De La Diosa De La Luna">
+        </a>
+
+        <div class="libro_puntuacion">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+            <div class="libro_precio">$6.990</div>
+    </div>
+</div>
+
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=4) }}">Indigno De Ser Humano</a> 
+        </h3>
+        <a href="{{ url_for('detalle_libro', id=4) }}"> 
+            <img src="{{ url_for('static', filename='img/libro9.jpeg') }}" alt="Indigno De Ser Humano">
+        </a>
+
+        <div class="libro_puntuacion">    
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="libro_precio">$5.990</div>
+    </div>
+</div>
+        </div>
 
         </div>
         <button class="carrusel_btn prev">&#9664;</button>

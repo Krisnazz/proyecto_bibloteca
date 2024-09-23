@@ -268,17 +268,20 @@ nav .menu li {
 
 /* Libros */
 
-.libro_titulo {
+.libro_titulo a{
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 5px;
-    text-align: center;
+    text-decoration: none;
+    color: inherit;
 }
 
 .libro_puntuacion {
     font-size: 14px;
     margin-bottom: 5px;
     color: gold;
+    margin-left: 30px;
+
 }
 
 .libro_puntuacion i:hover {
@@ -288,46 +291,9 @@ nav .menu li {
 .libro_precio {
     font-size: 14px;
     margin-bottom: 10px;
-    text-align: center;
+    margin-left: 55px;
 }
 
-.botones_libro {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.btn_comprar {
-    background-color: #799277;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    color: #F1EFD1;
-    transition: filter 0.3s ease;
-}
-
-.btn_comprar:hover {
-    filter: brightness(70%);
-}
-
-.btn_guardar {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    align-items: center;
-    display: flex;
-}
-
-.btn_guardar img {
-    width: 20px;
-    height: 30px;
-    transition: filter 0.3s ease;
-}
-
-.btn_guardar img:hover {
-    filter: brightness(70%);
-}
 
 /* Carrusel botones - indicadores */
 

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='img/buho.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/carrito.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+
+<!-- Header -->
+
+<header>
+    <div class="logo">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='img/WorldWords.png') }}" width="65%" alt="World Words">
+        </a>
+    </div>
+
+    <div class="btn">
+        <input type="text" placeholder="Autor, título, género...">
+        <button type="submit"><img src="{{ url_for('static', filename='img/lupa.png') }}" alt="Buscar"></button>
+
+    </div>
+    <nav>
+        <ul class="menu">
+            <li class="menu_icon"><i class="fas fa-bars" id="menu-btn"></i></li>
+            <li class="carrito_icon"><a href="{{ url_for('carrito') }}"><i class="fas fa-shopping-cart"></i></a></li>
+            <li class="cuenta_icon"><i class="fas fa-user"></i></li>
+        </ul>
+    </nav>
+
+    <div id="menu_desplegable" class="menu_categorias hidden">
+        <ul>
+            <li><a href="#">Romance</a></li>
+            <li><a href="#">Terror</a></li>
+            <li><a href="#">Acción</a></li>
+            <li><a href="#">Ciencia Ficción</a></li>
+            <li><a href="#">Fantasía</a></li>
+            <li><a href="#">Misterio</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Contenido Principal -->
+
+<main>
+    <h1 class="sub_titulo1">Tus Productos</h1>
+    <div class="carrito_container">
+
+    <div class="productos">
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=1) }}"> 
+        <img src="{{ url_for('static', filename='img/libro1.jpeg') }}" alt="La Canción De Aquiles">
+        </a>
+    </div>
+
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">La Cancion De Aquiles</h2>
+        <p class="carrito_precio">$10.00</p>
+        <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+    </div>
+</div>
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=2) }}"> 
+            <img src="{{ url_for('static', filename='img/libro2.webp') }}" alt="Alas De Hierro">
+        </a>
+    </div>
+
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">Alas De Hierro (2)</h2>
+        <p class="carrito_precio">$15.00</p>
+        <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+    </div>
+</div>
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=3) }}"> 
+        <img src="{{ url_for('static', filename='img/libro3.webp') }}" alt="El Principe Cruel">
+        </a>
+    </div>
+
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">El Principe Cruel</h2>
+        <p class="carrito_precio">$12.00</p>
+        <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+    </div>
+</div>
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=5) }}"> 
+            <img src="{{ url_for('static', filename='img/libro4.jpeg') }}" alt="Destroza Me">
+        </a>
+    </div>
+
+        <div class="carrito_detalles">
+            <h2 class="carrito_titulo">Destroza me</h2>
+            <p class="carrito_precio">$18.00</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+</div>
+
+
+    </div>
+
+<!-- Línea de separación -->
+
+        <div class="lineas_separacion"></div>
+        <div class="contenido">
+            <div class="carrito-summary">
+                <div class="carrito-summary-item">
+                    <p>Precio</p>
+                    <hr class="lineas_separacion-summary">
+                    <p>$25.00</p>
+                </div>
+                <div class="carrito-summary-item">
+                    <p>Producto</p>
+                    <hr class="lineas_separacion-summary">
+                    <p>Título del Libro</p>
+                </div>
+            </div>
+
+            <div class="carrito_total">
+                <p>Total</p>
+                <p>$25.00</p>
+            </div>
+
+            <div class="carrito_boton_total">
+                <button class="btn_comprar">Comprar</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="{{ url_for('static', filename='carrito.js') }}"></script>
+</body>
+</html>

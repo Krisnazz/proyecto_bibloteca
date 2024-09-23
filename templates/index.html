@@ -27,13 +27,27 @@
 
 <!-- Menu -->
 
-        <nav>
-            <ul class="menu">
-                <li class="menu_icon"><i class="fas fa-bars" id="menu-btn"></i></li>
-                <li class="carrito_icon"><i class="fas fa-shopping-cart"></i></li>
-                <li class="cuenta_icon"><i class="fas fa-user"></i></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul class="menu">
+            <li class="menu_icon"><i class="fas fa-bars" id="menu-btn"></i></li>
+            <li class="carrito_icon"><a href="{{ url_for('carrito') }}"><i class="fas fa-shopping-cart"></i></a></li>                
+            <li class="cuenta_icon"><i class="fas fa-user"></i></li>
+        </ul>
+    </nav>
+
+<!-- Menu Desplegable Categorías -->
+
+    <div id="menu_desplegable" class="menu_categorias hidden">
+        <ul>
+            <li><a href="#">Romance</a></li>
+            <li><a href="#">Terror</a></li>
+            <li><a href="#">Acción</a></li>
+            <li><a href="#">Ciencia Ficción</a></li>
+            <li><a href="#">Fantasía</a></li>
+            <li><a href="#">Misterio</a></li>
+        </ul>
+    </div>
+
     </header>
 
 <h2 class="sub_titulo1">Top Ventas</h2>
@@ -44,147 +58,220 @@
         <div class="carrusel">
             <div class="carrusel_items">
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">La Canción De Aquiles</h3>
-                    <img src="{{ url_for('static', filename='img/libro1.jpeg') }}">
-                    <div class="libro_puntuacion">                         
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$7.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=1) }}">La Canción De Aquiles</a> 
+        </h3>
+        <a href="{{ url_for('detalle_libro', id=1) }}"> 
+            <img src="{{ url_for('static', filename='img/libro1.jpeg') }}" alt="La Canción De Aquiles">
+        </a>
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Alas De Hierro (2)</h3>
-                    <img src="{{ url_for('static', filename='img/libro2.webp') }}">
-                    <div class="libro_puntuacion">                        
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$5.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">El Príncipe Cruel</h3>
-                    <img src="{{ url_for('static', filename='img/libro3.webp') }}">
-                    <div class="libro_puntuacion">                        
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$6.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Indigno De Ser Humano</h3>
-                    <img src="{{ url_for('static', filename='img/libro9.jpeg') }}">
-                    <div class="libro_puntuacion">    
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$5.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
+        <div class="libro_puntuacion">                         
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
         </div>
 
-            <div class="carrusel_items">
+        <div class="libro_precio">$7.990</div>
+        <div class="botones_libro">
+            <button class="btn_comprar">Comprar</button>
+            <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}" alt="Guardar"></button>
+        </div>
+    </div>
+</div>
 
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=2) }}">Alas De Hierro (2)</a> 
+        </h3>
+        <a href="{{ url_for('detalle_libro', id=2) }}"> 
+            <img src="{{ url_for('static', filename='img/libro2.webp') }}" alt="Alas De Hierro">
+        </a>
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Destroza Me</h3>
-                    <img src="{{ url_for('static', filename='img/libro4.jpeg') }}">
-                    <div class="libro_puntuacion">                         
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$7.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
+        <div class="libro_puntuacion">                        
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="libro_precio">$5.990</div>
+            <div class="botones_libro">
+                <button class="btn_comprar">Comprar</button>
+                <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
             </div>
+    </div>
+</div>
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Un Cuento Perfecto</h3>
-                    <img src="{{ url_for('static', filename='img/libro5.jpeg') }}">
-                    <div class="libro_puntuacion"> 
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$4.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=3) }}">El Principe Cruel</a> 
+        </h3>
+        <a href="{{ url_for('detalle_libro', id=3) }}"> 
+            <img src="{{ url_for('static', filename='img/libro3.webp') }}" alt="El Principe Cruel">
+        </a>
+
+        <div class="libro_puntuacion">                        
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="libro_precio">$6.990</div>
+            <div class="botones_libro">
+                <button class="btn_comprar">Comprar</button>
+                <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
             </div>
+    </div>
+</div>
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">La Hija De la Diosa De la Luna</h3>
-                    <img src="{{ url_for('static', filename='img/libro8.png') }}">
-                    <div class="libro_puntuacion">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$6.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=4) }}">Indigno De Ser Humano</a> 
+        </h3>
+        <a href="{{ url_for('detalle_libro', id=4) }}"> 
+            <img src="{{ url_for('static', filename='img/libro9.jpeg') }}" alt="Indigno De Ser Humano">
+        </a>
+
+        <div class="libro_puntuacion">    
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="libro_precio">$5.990</div>
+            <div class="botones_libro">
+                <button class="btn_comprar">Comprar</button>
+                <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
             </div>
+    </div>
+</div>
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Tan Poca Vida</h3>
-                    <img src="{{ url_for('static', filename='img/libro10.webp') }}">
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=5) }}">Destroza Me</a> 
+        </h3>
+
+        <a href="{{ url_for('detalle_libro', id=5) }}"> 
+            <img src="{{ url_for('static', filename='img/libro4.jpeg') }}" alt="Destroza Me">
+        </a>
+
+        <div class="libro_puntuacion">                         
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="libro_precio">$7.990</div>
+            <div class="botones_libro">
+                <button class="btn_comprar">Comprar</button>
+                <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+            </div>
+    </div>
+</div>
+
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=6) }}">Un Cuento Perfecto</a> 
+        </h3>
+
+        <a href="{{ url_for('detalle_libro', id=6) }}"> 
+            <img src="{{ url_for('static', filename='img/libro5.jpeg') }}" alt="Un Cuento Perfecto">
+        </a>
+
+        <div class="libro_puntuacion"> 
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="libro_precio">$4.990</div>
+            <div class="botones_libro">
+                <button class="btn_comprar">Comprar</button>
+                <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+            </div>
+    </div>
+</div>
+
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=7) }}">La Hija De La Diosa De La Luna</a> 
+        </h3>
+
+        <a href="{{ url_for('detalle_libro', id=7) }}"> 
+            <img src="{{ url_for('static', filename='img/libro8.png') }}" alt="La Hija De La Diosa De La Luna">
+        </a>
+
+        <div class="libro_puntuacion">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+            <div class="libro_precio">$6.990</div>
+                <div class="botones_libro">
+                    <button class="btn_comprar">Comprar</button>
+                    <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                </div>
+    </div>
+</div>
+
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=8) }}">Tan Poca Vida</a> 
+        </h3>
+
+        <a href="{{ url_for('detalle_libro', id=8) }}"> 
+            <img src="{{ url_for('static', filename='img/libro10.webp') }}" alt="Tan Poca Vida ">
+        </a>
+
+        <div class="libro_puntuacion">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="libro_precio">$5.990</div>
+            <div class="botones_libro">
+                <button class="btn_comprar">Comprar</button>
+                <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+            </div>
+    </div>
+</div>
+
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=9) }}">Al Final Mueren Los Dos</a> 
+        </h3>
+
+        <a href="{{ url_for('detalle_libro', id=9) }}"> 
+            <img src="{{ url_for('static', filename='img/libro13.webp') }}" alt="Al Final Mueren Los Dos">
+        </a>
+
                     <div class="libro_puntuacion">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -197,82 +284,76 @@
                         <button class="btn_comprar">Comprar</button>
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
-                </div>
+    </div>
+</div>
+
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=10) }}">Los 7 Maridos De Evelyn Hugo</a> 
+        </h3>
+
+        <a href="{{ url_for('detalle_libro', id=10) }}"> 
+            <img src="{{ url_for('static', filename='img/libro14.webp') }}" alt="Los 7 Maridos De Evelyn Hugo">
+        </a>
+
+        <div class="libro_puntuacion">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="libro_precio">$6.990</div>
+            <div class="botones_libro">
+                <button class="btn_comprar">Comprar</button>
+                <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
             </div>
+    </div>
+</div>
 
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Al Final Mueren Los Dos </h3>
-                    <img src="{{ url_for('static', filename='img/libro13.webp') }}">
-                    <div class="libro_puntuacion">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$5.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
+<div class="carrusel_item">
+    <div class="carrusel_detalles">
+        <h3 class="libro_titulo">
+            <a href="{{ url_for('detalle_libro', id=11) }}">La Bibloteca De La Media Noche</a> 
+        </h3>
+
+        <a href="{{ url_for('detalle_libro', id=11) }}"> 
+            <img src="{{ url_for('static', filename='img/libro15.webp') }}" alt="La Bibloteca De La Media Noche ">
+        </a>
+
+        <div class="libro_puntuacion">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <div class="libro_precio">$6.990</div>
+            <div class="botones_libro">
+                <button class="btn_comprar">Comprar</button>
+                <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
             </div>
-
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">Los 7 Maridos De Evelyn Hugo </h3>
-                    <img src="{{ url_for('static', filename='img/libro14.webp') }}">
-                    <div class="libro_puntuacion">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$6.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carrusel_item">
-                <div class="carrusel_detalles">
-                    <h3 class="libro_titulo">La Bibloteca De La Media Noche </h3>
-                    <img src="{{ url_for('static', filename='img/libro15.webp') }}">
-                    <div class="libro_puntuacion">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <div class="libro_precio">$6.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-            </div>
-
-
+    </div>
+</div>
 
             </div>
         </div>
 
 <!-- Indicadores - Flechas -->
 
-        <button class="carrusel_btn prev"><i class="fas fa-chevron-left"></i></button>
-        <button class="carrusel_btn next"><i class="fas fa-chevron-right"></i></button>
+    <button class="carrusel_btn prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="carrusel_btn next"><i class="fas fa-chevron-right"></i></button>
         <div class="indicadores">
             <div class="indicador"></div>
             <div class="indicador"></div>
         </div>
     </div>
 
-    <!-- Banner -->
+<!-- Banner -->
+
     <div class="banner">
         <img src="{{ url_for('static', filename='img/header1.png') }}" alt="Banner">
     </div>
@@ -284,7 +365,7 @@
         <div class="destacados">
             <div class="destacados_items">
 
-            <div class="destacados_item">
+<div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro4.jpeg') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">Destroza Me</h3>
@@ -301,10 +382,9 @@
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
-            </div>
+</div>
 
-
-            <div class="destacados_item">
+<div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro5.jpeg') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">Un Cuento Perfecto</h3>
@@ -321,9 +401,9 @@
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
-            </div>
+</div>
 
-            <div class="destacados_item">
+<div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro8.png') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">La Hija De la Diosa De la Luna</h3>
@@ -340,10 +420,9 @@
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
-            </div>
+</div>
 
-
-            <div class="destacados_item">
+<div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro7.png') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">Cuento De Hadas</h3>
@@ -360,9 +439,9 @@
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
-            </div>
+</div>
 
-            <div class="destacados_item">
+<div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro11.jpg') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">De Sangres y Cenizas</h3>
@@ -379,10 +458,9 @@
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
-            </div>
+</div>
 
-
-            <div class="destacados_item">
+<div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro12.jpeg') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">Damián</h3>
@@ -399,10 +477,9 @@
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
-            </div>
+</div>
 
-
-            <div class="destacados_item">
+<div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro13.webp') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">Al Final Mueren Los Dos</h3>
@@ -419,9 +496,9 @@
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
-            </div>
+</div>
 
-            <div class="destacados_item">
+<div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro14.webp') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">Los Siete Maridos De Evelyn Hugo</h3>
@@ -438,10 +515,9 @@
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
-            </div>
+</div>
 
-
-            <div class="destacados_item">
+<div class="destacados_item">
                 <img src="{{ url_for('static', filename='img/libro15.webp') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">La Bibloteca De La Media Noche</h3>
@@ -458,8 +534,7 @@
                         <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
                     </div>
                 </div>
-            </div>
-
+</div>
 
             </div>
         </div>

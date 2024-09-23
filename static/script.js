@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    setInterval(showNextItemCarrusel, 9000); 
+    setInterval(showNextItemCarrusel, 10000); 
 
 // Destacados
 
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const puntuacion = this.querySelector(".libro_puntuacion").innerHTML;
             const precio = this.querySelector(".libro_precio").textContent;
             const imagenSrc = this.querySelector("img").src;
-    
+
             localStorage.setItem("detalle_libro", JSON.stringify({
                 titulo,
                 resumen,
@@ -83,4 +83,14 @@ document.addEventListener("DOMContentLoaded", function() {
             window.location.href = "detalle_libro.html";
         });
     });
+
+// Menu desplegable de categorías
+
+    const menuBtn = document.getElementById('menu-btn');
+    const menuDesplegable = document.getElementById('menu_desplegable');
+
+    menuBtn.addEventListener('click', function() {
+        menuDesplegable.classList.toggle('show');
+        menuDesplegable.classList.toggle('hidden');
+        });
 });
