@@ -31,7 +31,7 @@
         <ul class="menu">
             <li class="menu_icon"><i class="fas fa-bars" id="menu-btn"></i></li>
             <li class="carrito_icon"><a href="{{ url_for('carrito') }}"><i class="fas fa-shopping-cart"></i></a></li>                
-            <li class="cuenta_icon"><i class="fas fa-user"></i></li>
+            <li class="cuenta_icon" id="openModal"><i class="fas fa-user"></i></li>
         </ul>
     </nav>
 
@@ -54,9 +54,9 @@
 
 <!-- Carrusel Principal -->
 
-    <div class="carrusel_container">
-        <div class="carrusel">
-            <div class="carrusel_items">
+<div class="carrusel_container">
+    <div class="carrusel">
+        <div class="carrusel_items">
 
 <div class="carrusel_item">
     <div class="carrusel_detalles">
@@ -339,8 +339,8 @@
     </div>
 </div>
 
-            </div>
         </div>
+    </div>
 
 <!-- Indicadores - Flechas -->
 
@@ -350,7 +350,7 @@
             <div class="indicador"></div>
             <div class="indicador"></div>
         </div>
-    </div>
+</div>
 
 <!-- Banner -->
 
@@ -360,7 +360,8 @@
 
 <!-- Destacados de Ciencia Ficción -->
 
-    <div class="sub_titulo">Destacados de Ciencia Ficción</div>
+<div class="sub_titulo">Destacados de Ciencia Ficción</div>
+
     <div class="destacados_container">
         <div class="destacados">
             <div class="destacados_items">
@@ -542,6 +543,29 @@
         <button class="destacados_btn next"><i class="fas fa-chevron-right"></i></button>
     </div>
 
+    <div class="modal" id="modalRegistro">
+        <div class="modal_contenido">
+            <div class="registro_container">
+                <h2>Registrarse</h2>
+                <form action="#" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Correo electrónico" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <p>¿Ya tienes una cuenta? <a href="#">Iniciar Sesión</a></p>
+                    <div class="social_registro">
+                        <span>Iniciar con:</span>
+                        <div class="social_icons">
+                            <i class="fab fa-google"></i>
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                    </div>
+                    <button type="submit">Crear cuenta</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
-</html>
+</html> 

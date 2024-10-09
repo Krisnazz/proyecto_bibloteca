@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Manejo de clic en los libros
 
-    document.querySelectorAll(".carrusel_item").forEach(item => {
+document.querySelectorAll(".carrusel_item").forEach(item => {
         item.addEventListener("click", function() {
             const titulo = this.querySelector(".libro_titulo").textContent;
             const resumen = this.querySelector(".libro_resumen") ? this.querySelector(".libro_resumen").textContent : '';
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }));
             window.location.href = "detalle_libro.html";
         });
-    });
+});
 
 // Menu desplegable de categorías
 
@@ -93,4 +93,19 @@ document.addEventListener("DOMContentLoaded", function() {
         menuDesplegable.classList.toggle('show');
         menuDesplegable.classList.toggle('hidden');
         });
+
+// clic en el icono del usuario
+
+        document.getElementById("openModal").addEventListener("click", function() {
+            document.getElementById("modalRegistro").style.display = "flex";
+        });
+
+// Cerrar al hacer clic fuera del contenido
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("modalRegistro")) {
+                document.getElementById("modalRegistro").style.display = "none";
+            }
+        };
+
 });

@@ -22,7 +22,7 @@
 
     <div class="btn">
         <input type="text" placeholder="Autor, título, género...">
-        <button type="submit"><img src="{{ url_for('static', filename='img/lupa.png') }}" alt="Buscar"></button>
+        <button type="button"><img src="{{ url_for('static', filename='img/lupa.png') }}" alt="Buscar"></button>
 
     </div>
     <nav>
@@ -48,7 +48,8 @@
 <!-- Contenido Principal -->
 
 <main>
-    <h1 class="sub_titulo1">Tus Productos</h1>
+<h1 class="sub_titulo1">Tus Productos</h1>
+
     <div class="carrito_container">
 
     <div class="productos">
@@ -62,8 +63,10 @@
 
     <div class="carrito_detalles">
         <h2 class="carrito_titulo">La Cancion De Aquiles</h2>
-        <p class="carrito_precio">$10.00</p>
-        <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$5.990</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
     </div>
 </div>
 
@@ -76,8 +79,10 @@
 
     <div class="carrito_detalles">
         <h2 class="carrito_titulo">Alas De Hierro (2)</h2>
-        <p class="carrito_precio">$15.00</p>
-        <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$5.990</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
     </div>
 </div>
 
@@ -90,8 +95,10 @@
 
     <div class="carrito_detalles">
         <h2 class="carrito_titulo">El Principe Cruel</h2>
-        <p class="carrito_precio">$12.00</p>
-        <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$6.990</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
     </div>
 </div>
 
@@ -102,11 +109,13 @@
         </a>
     </div>
 
-        <div class="carrito_detalles">
-            <h2 class="carrito_titulo">Destroza me</h2>
-            <p class="carrito_precio">$18.00</p>
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">Destroza Me</h2>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$7.990</p>
             <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
         </div>
+    </div>
 </div>
 
 
@@ -114,30 +123,75 @@
 
 <!-- Línea de separación -->
 
-        <div class="lineas_separacion"></div>
-        <div class="contenido">
-            <div class="carrito-summary">
-                <div class="carrito-summary-item">
-                    <p>Precio</p>
-                    <hr class="lineas_separacion-summary">
-                    <p>$25.00</p>
-                </div>
-                <div class="carrito-summary-item">
-                    <p>Producto</p>
-                    <hr class="lineas_separacion-summary">
-                    <p>Título del Libro</p>
-                </div>
-            </div>
+<div class="lineas_separacion"></div>
+<div class="contenido">
 
-            <div class="carrito_total">
-                <p>Total</p>
-                <p>$25.00</p>
-            </div>
-
-            <div class="carrito_boton_total">
-                <button class="btn_comprar">Comprar</button>
-            </div>
+    <div class="carrito-summary">
+        <div class="carrito-summary-item">
+            <p>Precio</p>
         </div>
+        <div class="carrito-summary-item">
+            <p class="producto_titulo">Producto</p>
+        </div>
+    </div>
+
+    <hr class="lineas_separacion-summary">
+
+    <div class="carrito-summary">
+        <div class="carrito-summary-item">
+            <p class="precio">$7.990</p>
+        </div>
+        <div class="carrito-summary-item">
+            <p class="libro_titulo">La Cancion De Aquiles</p>
+        </div>
+    </div>
+
+    <hr class="lineas_separacion-summary">
+
+    <div class="carrito-summary">
+        <div class="carrito-summary-item">
+            <p class="precio">$5.490</p>
+        </div>
+        <div class="carrito-summary-item">
+            <p class="libro_titulo">Alas De hierro (2) </p>
+        </div>
+    </div>
+
+    <hr class="lineas_separacion-summary">
+
+    <div class="carrito-summary">
+        <div class="carrito-summary-item">
+            <p class="precio">$6.990</p>
+        </div>
+        <div class="carrito-summary-item">
+            <p class="libro_titulo">El principe Cruel</p>
+        </div>
+    </div>
+
+    <hr class="lineas_separacion-summary">
+
+    <div class="carrito-summary">
+        <div class="carrito-summary-item">
+            <p class="precio">$7.990</p>
+        </div>
+        <div class="carrito-summary-item">
+            <p class="libro_titulo">Destroza Me</p>
+        </div>
+    </div>
+
+    <hr class="lineas_separacion-summary">
+
+    <div class="carrito_total">
+        <p>Total</p>
+        <p class="total_precio">0</p> 
+    </div>
+
+    <div class="carrito_boton_total">
+        <button class="btn_comprar">Comprar</button>
+    </div>
+</div>
+
+
     </div>
 </main>
 

@@ -1,6 +1,8 @@
 from flask import Flask, render_template, url_for
 
+
 app = Flask(__name__)
+app.secret_key = 'pruebaa'
 
 # Datos Libros detalles 
 
@@ -83,7 +85,7 @@ libros = {
     'img': 'img/libro14.webp',
     'puntuacion': 5,
     'resumen': 'Todos esperaban que Violet Sorrengail muriera en su primer año en el Colegio de Guerra de Basgiath, incluso ella misma. Pero la Trilla fue tan solo la primera de una serie de pruebas imposibles destinadas a deshacerse de los pusilánimes, los indignos y los desafortunados. Ahora comienza el verdadero entrenamiento y Violet no sabe cómo logrará superarlo. No solo porque es brutal y agotador ni porque está diseñado para llevar al límite el umbral del dolor de los jinetes, sino porque el nuevo vicecomandante está empeñado en demostrar a Violet lo débil que es a menos que traicione al hombre que ama.',
-    'precio': '$5.990'
+    'precio': '$6.990'
 },
 
 11: {
@@ -95,6 +97,7 @@ libros = {
 },
 
 }
+
 
 @app.route('/')
 def index():
@@ -115,3 +118,4 @@ def detalle_libro(id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+

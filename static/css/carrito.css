@@ -188,6 +188,19 @@ nav .menu li {
     gap: 20px; 
 }
 
+.carrito_detalles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carrito_precio_basura{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .carrito_item  {
     display: flex;
     border: none;
@@ -202,7 +215,7 @@ nav .menu li {
 .carrito_titulo {
     font-size: 20px;
     font-weight: 600;
-    margin: 0px 30px 15px;
+    margin: 0px 25px 15px;
     letter-spacing: 1px;
 }
 
@@ -217,7 +230,8 @@ nav .menu li {
 .carrito_precio {
     font-size: 17px;
     font-weight: 400;
-    margin-top: 10px;
+    margin-left: 55px;
+    text-align: center;
 }
 
 .carrito_titulo, .carrito_precio{
@@ -234,7 +248,6 @@ nav .menu li {
     color: #f1efd1;
     cursor: pointer;
     font-size: 20px;
-    margin: 0 10px 0px;
 }
 
 .carrito_basura :hover {
@@ -265,14 +278,37 @@ nav .menu li {
 .contenido {
     display: flex;
     flex-direction: column;
-    margin-left: 20px; 
     grid-column: 3; 
+    transform: translateX(-30px); 
 }
 
 .carrito-summary {
     display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.carrito-summary-item{
+    display: flex;
     flex-direction: column;
-    margin: 20px 0;
+    color: #2C4847;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.carrito-summary-item:nth-child(2) {
+    margin-left: 340px; 
+}
+
+.producto_titulo, .libro_titulo {
+    font-weight: 600;
+}
+
+.carrito_total{
+    color: #2C4847;
+    font-weight: 600;
 }
 
 .carrito_total {
@@ -302,3 +338,5 @@ nav .menu li {
 .btn_comprar:hover {
     filter: brightness(70%);
 }
+
+

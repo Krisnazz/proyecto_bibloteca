@@ -102,6 +102,14 @@ nav .menu li {
     text-decoration: none;
 }
 
+.cuenta_icon{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
 /* Top ventas */
 
 .sub_titulo1 {
@@ -480,4 +488,106 @@ nav .menu li {
 .show {
     display: block;
 }
+
+/* formulario */
+
+.registro_container {
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+}
+
+.registro_container h2 {
+    color: #F1EFD1;
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+.registro_container input[type="text"],
+.registro_container input[type="email"],
+.registro_container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 3px solid #799277;
+    border-radius: 25px;
+    box-sizing: border-box;
+    color: black;
+    font-size: 16px;
+}
+
+.registro_container button {
+    background-color: #799277;
+    color: #F1EFD1;
+    padding: 10px;
+    border: none;
+    border-radius: 45px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.registro_container button:hover {
+    background-color: #688066;
+}
+
+.registro_container p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #F1EFD1;
+}
+
+.registro_container a {
+    color: #799277;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.registro_container .social_registro {
+    margin: 20px 0;
+}
+
+.registro_container .social_registro span {
+    display: block;
+    margin-bottom: 10px;
+    color: #F1EFD1;
+    font-size: 14px;
+}
+
+.registro_container .social_icons {
+    display: flex;
+    justify-content: center;
+}
+
+.registro_container .social_icons i {
+    font-size: 30px;
+    margin: 0 10px;
+    color: #799277;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal_contenido {
+    background-color: #2C4847;
+    padding: 40px;
+    border-radius: 10px;
+    width: 400px;
+}
+
 
