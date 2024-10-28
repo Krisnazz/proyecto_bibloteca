@@ -37,16 +37,14 @@
 
 <!-- Menu Desplegable Categorías -->
 
-    <div id="menu_desplegable" class="menu_categorias hidden">
-        <ul>
-            <li><a href="#">Romance</a></li>
-            <li><a href="#">Terror</a></li>
-            <li><a href="#">Acción</a></li>
-            <li><a href="#">Ciencia Ficción</a></li>
-            <li><a href="#">Fantasía</a></li>
-            <li><a href="#">Misterio</a></li>
-        </ul>
-    </div>
+<div id="menu_desplegable" class="menu_categorias hidden">
+    <ul>
+        <li><a href="#" class="categoria" data-categoria="romance">Romance</a></li>
+        <li><a href="#" class="categoria" data-categoria="accion">Acción</a></li>
+        <li><a href="#" class="categoria" data-categoria="ficcion">Ficción</a></li>
+        <li><a href="#" class="categoria" data-categoria="fantasia">Fantasía</a></li>
+    </ul>
+</div>
 
     </header>
 
@@ -56,9 +54,9 @@
 
 <div class="carrusel_container">
     <div class="carrusel">
-        <div class="carrusel_items">
+        <div class="carrusel_items" >
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="ficcion">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=1) }}">La Canción De Aquiles</a> 
@@ -83,7 +81,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="fantasia">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=2) }}">Alas De Hierro (2)</a> 
@@ -108,7 +106,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="fantasia">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=3) }}">El Principe Cruel</a> 
@@ -133,7 +131,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="ficcion">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=4) }}">Indigno De Ser Humano</a> 
@@ -158,7 +156,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="ficcion">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=5) }}">Destroza Me</a> 
@@ -184,7 +182,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="romance">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=6) }}">Un Cuento Perfecto</a> 
@@ -210,7 +208,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="fantasia">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=7) }}">La Hija De La Diosa De La Luna</a> 
@@ -236,7 +234,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="novela">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=8) }}">Tan Poca Vida</a> 
@@ -262,7 +260,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="ficcion">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=9) }}">Al Final Mueren Los Dos</a> 
@@ -287,7 +285,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="romance">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=10) }}">Los 7 Maridos De Evelyn Hugo</a> 
@@ -313,7 +311,7 @@
     </div>
 </div>
 
-<div class="carrusel_item">
+<div class="carrusel_item" data-categoria="fantasia">
     <div class="carrusel_detalles">
         <h3 class="libro_titulo">
             <a href="{{ url_for('detalle_libro', id=11) }}">La Bibloteca De La Media Noche</a> 
@@ -366,7 +364,7 @@
         <div class="destacados">
             <div class="destacados_items">
 
-<div class="destacados_item">
+<div class="destacados_item" data-categoria="ficcion">
                 <img src="{{ url_for('static', filename='img/libro4.jpeg') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">Destroza Me</h3>
@@ -385,11 +383,11 @@
                 </div>
 </div>
 
-<div class="destacados_item">
-                <img src="{{ url_for('static', filename='img/libro5.jpeg') }}">
+<div class="destacados_item" data-categoria="ficcion">
+                <img src="{{ url_for('static', filename='img/libro16.webp') }}">
                 <div class="destacados_detalles">
-                    <h3 class="libro_titulo">Un Cuento Perfecto</h3>
-                    <p class="libro_resumen">Un ataque de pánico hará que Margot salga corriendo. Comenzará así un viaje en el que aprenderá la tarea de ser ella misma.</p>
+                    <h3 class="libro_titulo">Dune</h3>
+                    <p class="libro_resumen">Habitado por los monstruosos gusanos de arena de centenares de metros de longitud. Sin embargo, cuando la familia es traicionada, su hijo y heredero, Paul, emprenderá un viaje hacia un destino más grande del que jamás hubiese podido soñar.</p>
                     <div class="libro_puntuacion"> 
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -404,26 +402,7 @@
                 </div>
 </div>
 
-<div class="destacados_item">
-                <img src="{{ url_for('static', filename='img/libro8.png') }}">
-                <div class="destacados_detalles">
-                    <h3 class="libro_titulo">La Hija De la Diosa De la Luna</h3>
-                    <p class="libro_resumen">es una apasionante aventura inspirada en la leyenda de Chang'e que explora hasta dónde puede llegar una mujer en aras de la familia, la lealtad y el amor.</p>
-                    <div class="libro_puntuacion"> 
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i></div>                    
-                        <div class="libro_precio">$6.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-</div>
-
-<div class="destacados_item">
+<div class="destacados_item" data-categoria="ficcion">
                 <img src="{{ url_for('static', filename='img/libro7.png') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">Cuento De Hadas</h3>
@@ -442,7 +421,7 @@
                 </div>
 </div>
 
-<div class="destacados_item">
+<div class="destacados_item" data-categoria="ficcion">
                 <img src="{{ url_for('static', filename='img/libro11.jpg') }}">
                 <div class="destacados_detalles">
                     <h3 class="libro_titulo">De Sangres y Cenizas</h3>
@@ -461,11 +440,11 @@
                 </div>
 </div>
 
-<div class="destacados_item">
-                <img src="{{ url_for('static', filename='img/libro12.jpeg') }}">
+<div class="destacados_item" data-categoria="ficcion">
+                <img src="{{ url_for('static', filename='img/libro17.webp') }}">
                 <div class="destacados_detalles">
-                    <h3 class="libro_titulo">Damián</h3>
-                    <p class="libro_resumen">Un día,Damián desaparece y su vida sigue un curso corriente, pero meses después vuelve, y con él regresa la peligrosa curiosidad que Padme tanto intentó reprimir.</p>
+                    <h3 class="libro_titulo">Yo, Robot</h3>
+                    <p class="libro_resumen">En el año 2035, los robots son parte de la vida cotidiana. Cuando la confianza en ellos se rompe, sólo un hombre contra todo el sistema lo ve venir.</p>
                     <div class="libro_puntuacion"> 
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -480,11 +459,11 @@
                 </div>
 </div>
 
-<div class="destacados_item">
-                <img src="{{ url_for('static', filename='img/libro13.webp') }}">
+<div class="destacados_item" data-categoria="ficcion">
+                <img src="{{ url_for('static', filename='img/libro18.webp') }}">
                 <div class="destacados_detalles">
-                    <h3 class="libro_titulo">Al Final Mueren Los Dos</h3>
-                    <p class="libro_resumen">La historia agridulce de Mateo Torres y Rufus Emeterio, ambos desconocidos, pero terminan siendo amantes en un presente alternativo donde es posible predecir la muerte en un plazo de 24 horas</p>
+                    <h3 class="libro_titulo">El marciano</h3>
+                    <p class="libro_resumen">Mark Watney, es dado por muerto por su tripulación, en una misión en el planeta Marte, al poco tiempo del despegue de la nave Mark se da cuenta que se ha quedado solo en Marte y tiene que usar todo su ingenio y su entrenamiento para sobrevivir en planeta Marte.</p>
                     <div class="libro_puntuacion"> 
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -499,43 +478,7 @@
                 </div>
 </div>
 
-<div class="destacados_item">
-                <img src="{{ url_for('static', filename='img/libro14.webp') }}">
-                <div class="destacados_detalles">
-                    <h3 class="libro_titulo">Los Siete Maridos De Evelyn Hugo</h3>
-                    <p class="libro_resumen">Evelyn Hugo, el icono de Hollywood que se ha recluido a su edad madura, por fin decide contar la verdad sobre su vida llena de glamour y de escándalos. Pero cuando elige a Monique Grant, nadie se sorprende más que la propia Monique.</p>
-                    <div class="libro_puntuacion"> 
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i></div>                    
-                        <div class="libro_precio">$4.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-</div>
 
-<div class="destacados_item">
-                <img src="{{ url_for('static', filename='img/libro15.webp') }}">
-                <div class="destacados_detalles">
-                    <h3 class="libro_titulo">La Bibloteca De La Media Noche</h3>
-                    <p class="libro_resumen">Cuando la protagonista Nora Seed intenta suicidarse, abre los ojos en una biblioteca llena de libros que contienen diferentes versiones de la historia de su vida.</p>
-                    <div class="libro_puntuacion"> 
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i></div>                   
-                        <div class="libro_precio">$5.990</div>
-                    <div class="botones_libro">
-                        <button class="btn_comprar">Comprar</button>
-                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
-                    </div>
-                </div>
-</div>
 
             </div>
         </div>
@@ -547,11 +490,11 @@
         <div class="modal_contenido">
             <div class="registro_container">
                 <h2>Registrarse</h2>
-                <form action="#" method="POST">
+                <form action="{{ url_for('registro') }}" method="POST">
                     <input type="text" name="nombre" placeholder="Nombre" required>
                     <input type="email" name="email" placeholder="Correo electrónico" required>
                     <input type="password" name="password" placeholder="Contraseña" required>
-                    <p>¿Ya tienes una cuenta? <a href="#">Iniciar Sesión</a></p>
+                    <p>¿Ya tienes una cuenta? <a href="#" onclick="mostrarRegistro()">Iniciar Sesión</a></p>
                     <div class="social_registro">
                         <span>Iniciar con:</span>
                         <div class="social_icons">
@@ -568,4 +511,4 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
-</html> 
+</html> 8

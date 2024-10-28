@@ -276,6 +276,14 @@ nav .menu li {
     color: inherit;
 }
 
+.libro_categoria {
+    font-size: 1.2em; 
+    color: #5e6c48; 
+    margin-top: 15px; 
+    text-align: right;
+    padding: 10px 10px ;
+}
+
 .libro_puntuacion {
     font-size: 14px;
     margin-bottom: 5px;

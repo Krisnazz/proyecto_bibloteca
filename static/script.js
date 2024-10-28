@@ -2,41 +2,55 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Carrusel Principal
 
-    const carrusel = document.querySelector(".carrusel");
-    const carruselItems = document.querySelectorAll(".carrusel_item");
-    const prevBtnCarrusel = document.querySelector(".carrusel_btn.prev");
-    const nextBtnCarrusel = document.querySelector(".carrusel_btn.next");
-    const indicadores = document.querySelectorAll(".indicador");
-    let currentIndexCarrusel = 0;
+const carrusel = document.querySelector(".carrusel");
+const carruselItems = document.querySelectorAll(".carrusel_item");
+const prevBtnCarrusel = document.querySelector(".carrusel_btn.prev");
+const nextBtnCarrusel = document.querySelector(".carrusel_btn.next");
+const indicadores = document.querySelectorAll(".indicador");
+let currentIndexCarrusel = 0;
 
-    function updateCarrusel() {
-        carrusel.style.transform = `translateX(-${currentIndexCarrusel * 50}%)`;
-        indicadores.forEach((indicador, index) => {
-            indicador.classList.toggle('active', index === currentIndexCarrusel);
-        });
-    }
+function ajustarCarrusel() {
+    const totalItems = carruselItems.length;
+    const itemWidth = carruselItems[0].offsetWidth; 
+    const carruselWidth = itemWidth * totalItems; 
+    carrusel.style.width = `${carruselWidth}px`; 
+}
 
-    function showNextItemCarrusel() {
-        currentIndexCarrusel = (currentIndexCarrusel + 1) % carruselItems.length;
-        updateCarrusel();
-    }
-
-    function showPrevItemCarrusel() {
-        currentIndexCarrusel = (currentIndexCarrusel - 1 + carruselItems.length) % carruselItems.length;
-        updateCarrusel();
-    }
-
-    nextBtnCarrusel.addEventListener("click", showNextItemCarrusel);
-    prevBtnCarrusel.addEventListener("click", showPrevItemCarrusel);
-
+function updateCarrusel() {
+    const itemWidth = carruselItems[0].offsetWidth;
+    carrusel.style.transform = `translateX(-${currentIndexCarrusel * itemWidth}px)`;
+    
     indicadores.forEach((indicador, index) => {
-        indicador.addEventListener("click", () => {
-            currentIndexCarrusel = index;
-            updateCarrusel();
-        });
+        indicador.classList.toggle('active', index === currentIndexCarrusel);
     });
+}
 
-    setInterval(showNextItemCarrusel, 10000); 
+function showNextItemCarrusel() {
+    currentIndexCarrusel = (currentIndexCarrusel + 1) % carruselItems.length;
+    updateCarrusel();
+}
+
+function showPrevItemCarrusel() {
+    currentIndexCarrusel = (currentIndexCarrusel - 1 + carruselItems.length) % carruselItems.length;
+    updateCarrusel();
+}
+
+nextBtnCarrusel.addEventListener("click", showNextItemCarrusel);
+prevBtnCarrusel.addEventListener("click", showPrevItemCarrusel);
+
+indicadores.forEach((indicador, index) => {
+    indicador.addEventListener("click", () => {
+        currentIndexCarrusel = index;
+        updateCarrusel();
+    });
+});
+
+setInterval(showNextItemCarrusel, 10000);
+
+window.addEventListener('load', ajustarCarrusel);
+
+window.addEventListener('resize', ajustarCarrusel);
+
 
 // Destacados
 
@@ -63,9 +77,9 @@ document.addEventListener("DOMContentLoaded", function() {
     nextBtnDestacados.addEventListener("click", showNextItemDestacados);
     prevBtnDestacados.addEventListener("click", showPrevItemDestacados);
 
-// Manejo de clic en los libros
+// Clic en los libros
 
-document.querySelectorAll(".carrusel_item").forEach(item => {
+    document.querySelectorAll(".carrusel_item").forEach(item => {
         item.addEventListener("click", function() {
             const titulo = this.querySelector(".libro_titulo").textContent;
             const resumen = this.querySelector(".libro_resumen") ? this.querySelector(".libro_resumen").textContent : '';
@@ -82,7 +96,7 @@ document.querySelectorAll(".carrusel_item").forEach(item => {
             }));
             window.location.href = "detalle_libro.html";
         });
-});
+    });
 
 // Menu desplegable de categorías
 
@@ -92,20 +106,52 @@ document.querySelectorAll(".carrusel_item").forEach(item => {
     menuBtn.addEventListener('click', function() {
         menuDesplegable.classList.toggle('show');
         menuDesplegable.classList.toggle('hidden');
-        });
+    });
 
 // clic en el icono del usuario
 
-        document.getElementById("openModal").addEventListener("click", function() {
-            document.getElementById("modalRegistro").style.display = "flex";
-        });
+    document.getElementById("openModal").addEventListener("click", function() {
+        document.getElementById("modalRegistro").style.display = "flex";
+    });
 
 // Cerrar al hacer clic fuera del contenido
 
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("modalRegistro")) {
-                document.getElementById("modalRegistro").style.display = "none";
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("modalRegistro")) {
+            document.getElementById("modalRegistro").style.display = "none";
+        }
+    };
+
+// Filtrar libros por categoría
+
+const categorias = document.querySelectorAll('.categoria');
+const libros = document.querySelectorAll('.carrusel_item');
+
+categorias.forEach(categoria => {
+    categoria.addEventListener('click', function(event) {
+        event.preventDefault(); 
+        const categoriaSeleccionada = this.getAttribute('data-categoria');
+
+        libros.forEach(libro => {
+            if (categoriaSeleccionada === 'todo') {
+                libro.style.display = 'block'; 
+            } else if (libro.getAttribute('data-categoria') === categoriaSeleccionada) {
+                libro.style.display = 'block';
+            } else {
+                libro.style.display = 'none'; 
             }
-        };
+        });
+    });
+});
+
+document.querySelector("form").addEventListener("submit", function(event) {
+    const password = document.querySelector("input[name='password']").value;
+
+    if (password.length < 8) {
+        alert("La contraseña debe tener al menos 8 caracteres.");
+        event.preventDefault(); 
+    }
+});
+
 
 });

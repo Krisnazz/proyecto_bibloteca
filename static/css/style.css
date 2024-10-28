@@ -55,7 +55,7 @@ header {
     background-color: #869B67;
     border-radius: 50%;
     border: none;
-    padding: 3.5px 5px;
+    padding: 2.5px 5px;
     position: absolute;
     top: calc(29% - 11px);
     left: calc(65% + 79px);
@@ -137,7 +137,7 @@ nav .menu li {
 
 .carrusel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease;
 }
 
 .carrusel_items {
@@ -151,6 +151,7 @@ nav .menu li {
     align-items: center;
     width: 100%;
     padding: 10px;
+    min-width: 200px;
 }
 
 .carrusel_item img {
@@ -189,6 +190,8 @@ nav .menu li {
     text-decoration: none;
     color: inherit;
 }
+
+
 
 .libro_resumen {
     font-size: 12px;

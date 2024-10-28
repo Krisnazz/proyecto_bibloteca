@@ -118,7 +118,6 @@
     </div>
 </div>
 
-
     </div>
 
 <!-- Línea de separación -->
@@ -191,8 +190,118 @@
     </div>
 </div>
 
+    </div>
+    
+<h1 class="sub_titulo1">Tus Guardados</h1>
+
+    <div class="productos">
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=1) }}"> 
+        <img src="{{ url_for('static', filename='img/libro1.jpeg') }}" alt="La Canción De Aquiles">
+        </a>
+    </div>
+
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">La Cancion De Aquiles</h2>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$5.990</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=2) }}"> 
+            <img src="{{ url_for('static', filename='img/libro2.webp') }}" alt="Alas De Hierro">
+        </a>
+    </div>
+
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">Alas De Hierro (2)</h2>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$5.990</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=3) }}"> 
+        <img src="{{ url_for('static', filename='img/libro3.webp') }}" alt="El Principe Cruel">
+        </a>
+    </div>
+
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">El Principe Cruel</h2>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$6.990</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=5) }}"> 
+            <img src="{{ url_for('static', filename='img/libro4.jpeg') }}" alt="Destroza Me">
+        </a>
+    </div>
+
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">Destroza Me</h2>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$7.990</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=5) }}"> 
+            <img src="{{ url_for('static', filename='img/libro4.jpeg') }}" alt="Destroza Me">
+        </a>
+    </div>
+
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">Destroza Me</h2>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$7.990</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    </div>
+</div>
+
+<div class="carrito_item">
+    <div class="carrito_img">
+        <a href="{{ url_for('detalle_libro', id=5) }}"> 
+            <img src="{{ url_for('static', filename='img/libro4.jpeg') }}" alt="Destroza Me">
+        </a>
+    </div>
+
+    <div class="carrito_detalles">
+        <h2 class="carrito_titulo">Destroza Me</h2>
+        <div class="carrito_precio_basura">
+            <p class="carrito_precio">$7.990</p>
+            <button class="carrito_basura"><i class="fa-regular fa-trash-can"></i></button>
+        </div>
+    </div>
+</div>
 
     </div>
+
+
+
+
+
+
+
+
+
 </main>
 
 <script src="{{ url_for('static', filename='carrito.js') }}"></script>
