@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 import sqlite3
 
 app = Flask(__name__)
@@ -128,6 +128,44 @@ libros = {
     'precio': '$5.990',
     'categoria': 'fantasia'
 },
+
+12: {
+    'titulo': 'El marciano',
+    'img': 'img/libro18.webp',
+    'puntuacion': 5,
+    'resumen': 'Mark Watney, es dado por muerto por su tripulación, en una misión en el planeta Marte, al poco tiempo del despegue de la nave Mark se da cuenta que se ha quedado solo en Marte y tiene que usar todo su ingenio y su entrenamiento para sobrevivir en planeta Marte.',
+    'precio': '$5.990',
+    'categoria': 'ficcion'
+},
+
+13: {
+    'titulo': 'Yo, Robot',
+    'img': 'img/libro17.webp',
+    'puntuacion': 5,
+    'resumen': 'En el año 2035, los robots son parte de la vida cotidiana. Cuando la confianza en ellos se rompe, sólo un hombre contra todo el sistema lo ve venir.',
+    'precio': '$7.990',
+    'categoria': 'ficcion'
+},
+
+14: {
+    'titulo': 'De sangres y cenizas',
+    'img': 'img/libro11.jpg',
+    'puntuacion': 5,
+    'resumen': 'En el año 2035, los robots son parte de la vida cotidiana. Cuando la confianza en ellos se rompe, sólo un hombre contra todo el sistema lo ve venir.',
+    'precio': '$6.990',
+    'categoria': 'ficcion'
+},
+
+15: {
+    'titulo': 'Dune',
+    'img': 'img/libro16.webp',
+    'puntuacion': 5,
+    'resumen': 'Habitado por los monstruosos gusanos de arena de centenares de metros de longitud. Sin embargo, cuando la familia es traicionada, su hijo y heredero, Paul, emprenderá un viaje hacia un destino más grande del que jamás hubiese podido soñar.',
+    'precio': '$7.990',
+    'categoria': 'ficcion'
+},
+
+
 
 }
 
