@@ -223,6 +223,17 @@ def login():
         return "Intenta de nuevo."
 
 
+@app.route('/buscar', methods=['GET'])
+def buscar():
+    query = request.args.get('query', '').lower()
+    if query:
+        libros_filtrados = {id: libro for id, libro in libros.items() if query in libro['titulo'].lower() or query in libro['categoria'].lower()}
+    else:
+        libros_filtrados = libros
+
+    return jsonify(libros_filtrados)
+
+
 if __name__ == '__main__':
     crear_tabla_usuarios()  
     app.run(debug=True)

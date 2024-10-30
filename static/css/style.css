@@ -594,3 +594,77 @@ nav .menu li {
 }
 
 
+.destacados_container {
+    position: relative;
+    max-width: 1220px;
+    margin: 20px auto;
+    overflow: hidden;
+    background-color: #2C4847;
+    border-radius: 40px;
+    padding: 10px;
+    color: #F1EFD1;
+}
+
+.destacados_terror{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.destacados_terror_items {
+    display: flex;
+    width: 50%;
+}
+
+.destacados_terror_item {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    padding: 20px;
+}
+
+.destacados_terror_item img {
+    width: 140px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+
+/* Botones destacados*/
+
+.destacados_terror_btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2C4847;
+    color: #F1EFD1;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.destacados_detalles {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.btn_guardar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btn_guardar img {
+    width: 20px;
+    height: 30px;
+    transition: filter 0.3s ease;
+}
+
+.btn_guardar img:hover {
+    filter: brightness(70%)
+}

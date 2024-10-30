@@ -1,56 +1,54 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-// Carrusel Principal
+    // Carrusel Principal
 
-const carrusel = document.querySelector(".carrusel");
-const carruselItems = document.querySelectorAll(".carrusel_item");
-const prevBtnCarrusel = document.querySelector(".carrusel_btn.prev");
-const nextBtnCarrusel = document.querySelector(".carrusel_btn.next");
-const indicadores = document.querySelectorAll(".indicador");
-let currentIndexCarrusel = 0;
+    const carrusel = document.querySelector(".carrusel");
+    const carruselItems = document.querySelectorAll(".carrusel_item");
+    const prevBtnCarrusel = document.querySelector(".carrusel_btn.prev");
+    const nextBtnCarrusel = document.querySelector(".carrusel_btn.next");
+    const indicadores = document.querySelectorAll(".indicador");
+    let currentIndexCarrusel = 0;
 
-function ajustarCarrusel() {
-    const totalItems = carruselItems.length;
-    const itemWidth = carruselItems[0].offsetWidth; 
-    const carruselWidth = itemWidth * totalItems; 
-    carrusel.style.width = `${carruselWidth}px`; 
-}
+    function ajustarCarrusel() {
+        const totalItems = carruselItems.length;
+        const itemWidth = carruselItems[0].offsetWidth; 
+        const carruselWidth = itemWidth * totalItems; 
+        carrusel.style.width = `${carruselWidth}px`; 
+    }
 
-function updateCarrusel() {
-    const itemWidth = carruselItems[0].offsetWidth;
-    carrusel.style.transform = `translateX(-${currentIndexCarrusel * itemWidth}px)`;
-    
-    indicadores.forEach((indicador, index) => {
-        indicador.classList.toggle('active', index === currentIndexCarrusel);
-    });
-}
+    function updateCarrusel() {
+        const itemWidth = carruselItems[0].offsetWidth;
+        carrusel.style.transform = `translateX(-${currentIndexCarrusel * itemWidth}px)`;
+        
+        indicadores.forEach((indicador, index) => {
+            indicador.classList.toggle('active', index === currentIndexCarrusel);
+        });
+    }
 
-function showNextItemCarrusel() {
-    currentIndexCarrusel = (currentIndexCarrusel + 1) % carruselItems.length;
-    updateCarrusel();
-}
-
-function showPrevItemCarrusel() {
-    currentIndexCarrusel = (currentIndexCarrusel - 1 + carruselItems.length) % carruselItems.length;
-    updateCarrusel();
-}
-
-nextBtnCarrusel.addEventListener("click", showNextItemCarrusel);
-prevBtnCarrusel.addEventListener("click", showPrevItemCarrusel);
-
-indicadores.forEach((indicador, index) => {
-    indicador.addEventListener("click", () => {
-        currentIndexCarrusel = index;
+    function showNextItemCarrusel() {
+        currentIndexCarrusel = (currentIndexCarrusel + 1) % carruselItems.length;
         updateCarrusel();
+    }
+
+    function showPrevItemCarrusel() {
+        currentIndexCarrusel = (currentIndexCarrusel - 1 + carruselItems.length) % carruselItems.length;
+        updateCarrusel();
+    }
+
+    nextBtnCarrusel.addEventListener("click", showNextItemCarrusel);
+    prevBtnCarrusel.addEventListener("click", showPrevItemCarrusel);
+
+    indicadores.forEach((indicador, index) => {
+        indicador.addEventListener("click", () => {
+            currentIndexCarrusel = index;
+            updateCarrusel();
+        });
     });
-});
 
-setInterval(showNextItemCarrusel, 10000);
+    setInterval(showNextItemCarrusel, 10000);
 
-window.addEventListener('load', ajustarCarrusel);
-
-window.addEventListener('resize', ajustarCarrusel);
-
+    window.addEventListener('load', ajustarCarrusel);
+    window.addEventListener('resize', ajustarCarrusel);
 
 // Destacados
 
@@ -61,7 +59,8 @@ window.addEventListener('resize', ajustarCarrusel);
     let currentIndexDestacados = 0;
 
     function updateDestacados() {
-        destacadosCarrusel.style.transform = `translateX(-${currentIndexDestacados * 100}%)`;
+        const itemWidth = destacadosItems[0].offsetWidth;
+        destacadosCarrusel.style.transform = `translateX(-${currentIndexDestacados * itemWidth}px)`;
     }
 
     function showNextItemDestacados() {
@@ -76,6 +75,37 @@ window.addEventListener('resize', ajustarCarrusel);
 
     nextBtnDestacados.addEventListener("click", showNextItemDestacados);
     prevBtnDestacados.addEventListener("click", showPrevItemDestacados);
+
+    window.addEventListener('resize', updateDestacados);
+
+//Destacados de Terror
+
+const destacados_terrorCarrusel = document.querySelector(".destacados_terror");
+const destacados_terrorItems = document.querySelectorAll(".destacados_terror_item");
+const prevBtnDestacadosTerror = document.querySelector(".destacados_btn.prev");
+const nextBtnDestacadosTerror = document.querySelector(".destacados_btn.next");
+let currentIndexDestacadosTerror = 0;
+
+function updateDestacadosTerror() {
+    const itemWidth = destacados_terrorItems[0].offsetWidth;
+    destacados_terrorCarrusel.style.transform = `translateX(-${currentIndexDestacadosTerror * itemWidth}px)`;
+}
+
+function showNextItemDestacadosTerror() {
+    currentIndexDestacadosTerror = (currentIndexDestacadosTerror + 1) % destacados_terrorItems.length;
+    updateDestacadosTerror();
+}
+
+function showPrevItemDestacadosTerror() {
+    currentIndexDestacadosTerror = (currentIndexDestacadosTerror - 1 + destacados_terrorItems.length) % destacados_terrorItems.length;
+    updateDestacadosTerror();
+}
+
+nextBtnDestacadosTerror.addEventListener("click", showNextItemDestacadosTerror);
+prevBtnDestacadosTerror.addEventListener("click", showPrevItemDestacadosTerror);
+
+window.addEventListener('resize', updateDestacadosTerror);
+
 
 // Clic en los libros
 
@@ -124,36 +154,34 @@ window.addEventListener('resize', ajustarCarrusel);
 
 // Filtrar libros por categoría
 
-const categorias = document.querySelectorAll('.categoria');
-const libros = document.querySelectorAll('.carrusel_item');
+    const categorias = document.querySelectorAll('.categoria');
+    const libros = document.querySelectorAll('.carrusel_item');
 
-categorias.forEach(categoria => {
-    categoria.addEventListener('click', function(event) {
-        event.preventDefault(); 
-        const categoriaSeleccionada = this.getAttribute('data-categoria');
+    categorias.forEach(categoria => {
+        categoria.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            const categoriaSeleccionada = this.getAttribute('data-categoria');
+            console.log("Categoría seleccionada: ", categoriaSeleccionada); 
 
-        libros.forEach(libro => {
-            if (categoriaSeleccionada === 'todo') {
-                libro.style.display = 'block'; 
-            } else if (libro.getAttribute('data-categoria') === categoriaSeleccionada) {
-                libro.style.display = 'block';
-            } else {
-                libro.style.display = 'none'; 
-            }
+            libros.forEach(libro => {
+                if (categoriaSeleccionada === 'todo') {
+                    libro.style.display = 'block'; 
+                } else if (libro.getAttribute('data-categoria') === categoriaSeleccionada) {
+                    libro.style.display = 'block';
+                } else {
+                    libro.style.display = 'none'; 
+                }
+            });
         });
     });
-});
 
-document.querySelector("form").addEventListener("submit", function(event) {
-    const password = document.querySelector("input[name='password']").value;
+    document.querySelector("form").addEventListener("submit", function(event) {
+        const password = document.querySelector("input[name='password']").value;
 
-    if (password.length < 8) {
-        alert("La contraseña debe tener al menos 8 caracteres.");
-        event.preventDefault(); 
-    }
-});
-
-
-
+        if (password.length < 8) {
+            alert("La contraseña debe tener al menos 8 caracteres.");
+            event.preventDefault(); 
+        }
+    });
 
 });

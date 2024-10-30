@@ -348,12 +348,13 @@ nav .menu li {
     cursor: pointer;
     color: #F1EFD1;
     margin-left: 20px;
+    transition: filter 0.3s ease;
+
 }
 
 .btn_guardar img {
     width: 25px;
     height: 30px;
-    transition: filter 0.3s ease;
 }
 
 .btn_guardar img:hover {

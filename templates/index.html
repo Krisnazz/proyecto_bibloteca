@@ -20,10 +20,12 @@
             </a>
         </div>
 
-    <div class="btn">
-        <input type="text" placeholder="Autor, título, género...">
-        <button type="submit"><img src="{{ url_for('static', filename='img/lupa.png') }}" alt="Buscar"></button>
-    </div>
+<div class="btn">
+    <input type="text" placeholder="Título o género...">
+    <button type="submit"><img src="{{ url_for('static', filename='img/lupa.png') }}" alt="Buscar">
+    </button>
+</div>
+
 
 <!-- Menu -->
 
@@ -478,13 +480,126 @@
                 </div>
 </div>
 
-
-
             </div>
         </div>
         <button class="destacados_btn prev"><i class="fas fa-chevron-left"></i></button>
         <button class="destacados_btn next"><i class="fas fa-chevron-right"></i></button>
     </div>
+
+<div class="sub_titulo">Destacados de Terror</div>
+
+<div class="destacados_container">
+    <div class="destacados_terror">
+        <div class="destacados_terror_items">
+
+            <div class="destacados_terror_item" data-categoria="terror">
+                <img src="{{ url_for('static', filename='img/libro19.webp') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">El Resplandor</h3>
+                    <p class="libro_resumen">Jack Torrance se convierte en el cuidador de un hotel aislado y comienza a perder la cordura, mientras su hijo Danny tiene visiones aterradoras.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="libro_precio">$8.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados_terror_item" data-categoria="terror">
+                <img src="{{ url_for('static', filename='img/libro20.webp') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">It</h3>
+                    <p class="libro_resumen">Un grupo de amigos debe enfrentarse a un ente maligno que toma la forma de un payaso y aterroriza a los niños de Derry.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>                    
+                    <div class="libro_precio">$9.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados_terror_item" data-categoria="terror">
+                <img src="{{ url_for('static', filename='img/libro21.jpeg') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">El Exorcista</h3>
+                    <p class="libro_resumen">Una madre busca la ayuda de un sacerdote para salvar a su hija poseída por un demonio.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>                    
+                    <div class="libro_precio">$7.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados_terror_item" data-categoria="terror">
+                <img src="{{ url_for('static', filename='img/libro22.webp') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">La Llamada de Cthulhu</h3>
+                    <p class="libro_resumen">Un investigador descubre un culto secreto que rinde culto a una entidad antigua y aterradora.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>                    
+                    <div class="libro_precio">$6.990</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destacados_terror_item" data-categoria="terror">
+                <img src="{{ url_for('static', filename='img/libro23.webp') }}">
+                <div class="destacados_detalles">
+                    <h3 class="libro_titulo">Drácula</h3>
+                    <p class="libro_resumen">El conde Drácula busca trasladarse a Londres para propagar la no-muerte, mientras un grupo de amigos intenta detenerlo.</p>
+                    <div class="libro_puntuacion"> 
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>                   
+                    <div class="libro_precio">$8.490</div>
+                    <div class="botones_libro">
+                        <button class="btn_comprar">Comprar</button>
+                        <button class="btn_guardar"><img src="{{ url_for('static', filename='img/guardar_icon.png') }}"></button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>    
+        <button class="destacados_btn prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="destacados_btn next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+</div>
+
 
     <div class="modal" id="modalRegistro">
         <div class="modal_contenido">
